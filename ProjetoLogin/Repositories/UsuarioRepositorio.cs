@@ -36,7 +36,7 @@ namespace ProjetoLogin.Repositories
                 await conexao.OpenAsync();
 
                 // Define a instrução SQL de inserção (INSERT) com parâmetros para evitar SQL Injection
-                var query = "INSERT INTO usuarios (Nome, Email, SenhaHash) VALUES (@Nome, @Email, @SenhaHash)";
+                var query = "INSERT INTO usuario (Nome, Email, SenhaHash) VALUES (@Nome, @Email, @SenhaHash)";
                 // Cria o comando SQL associando a query e a conexão aberta
                 using var comando = new MySqlCommand(query, conexao);
 
@@ -64,7 +64,7 @@ namespace ProjetoLogin.Repositories
             await conexao.OpenAsync();
 
             // Define a query SQL para selecionar os dados do usuário com base no e-mail fornecido
-            var query = "SELECT Id, Nome, Email, SenhaHash FROM usuarios WHERE Email = @Email";
+            var query = "SELECT Id, Nome, Email, SenhaHash FROM usuario WHERE Email = @Email";
             // Cria o comando SQL para executar a consulta
             using var comando = new MySqlCommand(query, conexao);
             // Adiciona o parâmetro de e-mail de forma segura

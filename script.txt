@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS usuario(
 	Id INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(50) NOT NULL,
     Email varchar(100) NOT NULL UNIQUE,
-    SenhaHarsh varchar(255) NOT NULL,
+    SenhaHash varchar(255) NOT NULL,
     DataCriacao DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 

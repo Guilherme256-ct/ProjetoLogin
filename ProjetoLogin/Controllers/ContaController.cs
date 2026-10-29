@@ -25,12 +25,12 @@ namespace ProjetoLogin.Controllers
         // Define que este método responde a requisições do tipo HTTP GET para a rota de Registro
         [HttpGet]
         // Ação que retorna a View (página HTML) de cadastro de usuário
-        public IActionResult Register() => View();
+        public IActionResult CriarConta() => View();
 
         // Define que este método responde a requisições do tipo HTTP POST (envio de formulário de registro)
         [HttpPost]
         // Ação assíncrona que recebe os dados básicos do usuário para cadastro
-        public async Task<IActionResult> Register(string nome, string email, string senha)
+        public async Task<IActionResult> CriarConta(string nome, string email, string senha)
         {
             // Valida se algum dos campos obrigatórios está vazio ou em branco
             if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha))
